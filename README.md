@@ -21,7 +21,7 @@ This must be called before using any other function. If the device is connected 
 
 bool connected();
 -------------
-Returns *true* if a PCF8574 is connected at the specified address, otherwise returns false.
+Returns *true* if a PCF8574 is connected at the specified address, otherwise returns *false*.
 
 uint8_t read();
 -------------
@@ -41,7 +41,7 @@ Writes a single bit, to the specified pin, 0 to 7.
 
 void lsl(uint8_t number, bool rotate);
 -------------
-Logocally shifts the output bits left. Shift should be 0-7, but higger values will simply clear the output to zero (if
+Logocally shifts the output bits left. Shift should be 0-7, but bigger values will simply clear the output to zero (if
 *rotate* is zero.
 
 If *rotate* is false, the rightmost bits will be filled with zero. If true the rightmost bits will be the bits shifted
@@ -49,7 +49,7 @@ out of the left.
 
 void lsr(uint8_t, bool);
 -------------
-Logocally shifts the output bits right. Shift should be 0-7, but higger values will simply clear the output to zero (if
+Logocally shifts the output bits right. Shift should be 0-7, but bigger values will simply clear the output to zero (if
 *rotate* is zero.
 
 If *rotate* is false, the leftmost bits will be filled with zero. If true the leftmost bits will be the bits shifted
