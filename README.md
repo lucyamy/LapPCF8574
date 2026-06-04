@@ -1,5 +1,5 @@
 # LapPCF8574
-An Arduino library to drive the PCF8574 I/O expander
+An Arduino library to drive the PCF8574 I/O expander. It is small and simple, but letes likely lets you do what you need.
      
 The library
 -----------
@@ -21,21 +21,37 @@ This must be called before using any other function. If the device is connected 
 
 bool connected();
 -------------
+Returns *true* if a PCF8574 is connected at the specified address, otherwise returns false.
 
 uint8_t read();
 -------------
+Reads a byte.
 
-void write(uint8_t);
+void write(uint8_t value);
 -------------
+Writes a byte.
 
-bool pinRead(uint8_t);
+bool pinRead(uint8_t pin);
 -------------
+Reads a single bit, from the specified pin, 0 to 7.
 
-void pinWrite(uint8_t, bool);
+void pinWrite(uint8_t pin, bool value);
 -------------
+Writes a single bit, to the specified pin, 0 to 7.
 
-void lsl(uint8_t, bool);
+void lsl(uint8_t number, bool rotate);
 -------------
+Logocally shifts the output bits left. Shift should be 0-7, but higger values will simply clear the output to zero (if
+*rotate* is zero.
+
+If *rotate* is false, the rightmost bits will be filled with zero. If true the rightmost bits will be the bits shifted
+out of the left.
 
 void lsr(uint8_t, bool);
 -------------
+Logocally shifts the output bits right. Shift should be 0-7, but higger values will simply clear the output to zero (if
+*rotate* is zero.
+
+If *rotate* is false, the leftmost bits will be filled with zero. If true the leftmost bits will be the bits shifted
+out of the right.
+
