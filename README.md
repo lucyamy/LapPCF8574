@@ -1,5 +1,5 @@
 # LapPCF8574
-An Arduino library to drive the PCF8574 I/O expander. It is small and simple, but letes likely lets you do what you need.
+An Arduino library to drive the PCF8574 I/O expander. It is small and simple, but likely lets you do what you need.
      
 The library
 -----------
