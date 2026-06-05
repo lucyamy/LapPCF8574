@@ -14,8 +14,9 @@ class LapPCF8574 {
     bool connected();
     uint8_t read();
     void write(uint8_t);
-    bool pinRead(uint8_t);
-    void pinWrite(uint8_t, bool);
+    bool digitalRead(uint8_t);
+    void digitalWrite(uint8_t, bool);
+    void pinMode(uint8_t, uint8_t);
     void lsl(uint8_t, bool);
     void lsr(uint8_t, bool);
 
