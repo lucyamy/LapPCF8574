@@ -45,17 +45,17 @@ If mode is INPUT, sets pin to be an input, and if mode is OUTPUT, it will be an 
 
 void lsl(uint8_t number, bool rotate);
 -------------
-Logocally shifts the output bits left. Shift should be 0-7, but bigger values will simply clear the output to zero (if
+Logically shifts the output bits left. Shift should be 0-7, but bigger values will simply clear the output to zero (if
 *rotate* is zero.
 
-If *rotate* is false, the rightmost bits will be filled with zero. If true the rightmost bits will be the bits shifted
+If *rotate* is false, the rightmost bits will be filled with zeroes. If true the rightmost bits will be the bits shifted
 out of the left.
 
 void lsr(uint8_t, bool);
 -------------
-Logocally shifts the output bits right. Shift should be 0-7, but bigger values will simply clear the output to zero (if
+Logically shifts the output bits right. Shift should be 0-7, but bigger values will simply clear the output to zero (if
 *rotate* is zero.
 
-If *rotate* is false, the leftmost bits will be filled with zero. If true the leftmost bits will be the bits shifted
+If *rotate* is false, the leftmost bits will be filled with zeroes. If true the leftmost bits will be the bits shifted
 out of the right.
 
