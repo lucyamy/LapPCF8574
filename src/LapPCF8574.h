@@ -4,7 +4,7 @@
 #include <Wire.h>
 
 class LapPCF8574 {
-  
+
   public:
     LapPCF8574();
     LapPCF8574(uint8_t);
@@ -23,7 +23,7 @@ class LapPCF8574 {
   private:
     uint8_t _addr;
     TwoWire *_wire;
-    uint8_t _dataWrite;  // needed for pinWrite
+    uint8_t _dataWrite;  // needed for digitalWrite
 };
 
 #endif
