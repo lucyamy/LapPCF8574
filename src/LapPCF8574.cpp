@@ -53,7 +53,7 @@ uint8_t LapPCF8574::read() {
   return data;
 }
 
-bool LapPCF8574::pinRead(uint8_t pin) {
+bool LapPCF8574::digitalRead(uint8_t pin) {
   bool bit;
   uint8_t data = read();
   uint8_t mask = 1 << pin;
@@ -62,12 +62,15 @@ bool LapPCF8574::pinRead(uint8_t pin) {
   return bit;
 }
 
-void LapPCF8574::pinWrite(uint8_t pin, bool bit) {
+void LapPCF8574::digitalWrite(uint8_t pin, bool bit) {
   if (bit)
     _dataWrite |= (1 << pin);
   else
     _dataWrite &= ~(1 << pin);
   write(_dataWrite);
+}
+
+void LapPCF8574::pinMode(uint8_t pin, uint8_t mode) {
 }
 
 void LapPCF8574::lsr(uint8_t shift, bool rot) {
