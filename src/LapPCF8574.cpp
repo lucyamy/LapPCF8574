@@ -63,7 +63,7 @@ bool LapPCF8574::digitalRead(uint8_t pin) {
 }
 
 void LapPCF8574::digitalWrite(uint8_t pin, bool bit) {
-  if (bit)
+  if(bit)
     _dataWrite |= (1 << pin);
   else
     _dataWrite &= ~(1 << pin);
@@ -71,10 +71,15 @@ void LapPCF8574::digitalWrite(uint8_t pin, bool bit) {
 }
 
 void LapPCF8574::pinMode(uint8_t pin, uint8_t mode) {
+  if(mode == INPUT) {
+    _dataWrite |= (1 << pin);
+    write(_dataWrite);
+  }
 }
 
 void LapPCF8574::lsr(uint8_t shift, bool rot) {
-  if((shift == 0) || (_dataWrite == 0)) return;
+  if((shift == 0) || (_dataWrite == 0))
+    return;
   if(rot) {
     shift %= 8;
     _dataWrite = (_dataWrite >> shift) | (_dataWrite << (7 - shift));
@@ -86,7 +91,8 @@ void LapPCF8574::lsr(uint8_t shift, bool rot) {
 }
 
 void LapPCF8574::lsl(uint8_t shift, bool rot) {
-  if ((shift == 0) || (_dataWrite == 0)) return;
+  if((shift == 0) || (_dataWrite == 0))
+    return;
   if(rot) {
     shift %= 8;
     _dataWrite = (_dataWrite << shift) | (_dataWrite >> (7 - shift));
