@@ -31,13 +31,17 @@ void write(uint8_t value);
 -------------
 Writes a byte.
 
-bool pinRead(uint8_t pin);
+bool digitalRead(uint8_t pin);
 -------------
 Reads a single bit, from the specified pin, 0 to 7.
 
-void pinWrite(uint8_t pin, bool value);
+void digitalWrite(uint8_t pin, bool value);
 -------------
 Writes a single bit, to the specified pin, 0 to 7.
+
+void pinMode(uint8_t pin, uint8_t mode);
+-------------
+If mode is INPUT, sets pin to be an input, and if mode is OUTPUT, it will be an output. Note that INPUT_PULLUP and INPUT_PULLDOWN are not supported.
 
 void lsl(uint8_t number, bool rotate);
 -------------
