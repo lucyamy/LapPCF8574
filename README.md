@@ -51,7 +51,7 @@ Logically shifts the output bits left. Shift should be 0-7, but bigger values wi
 If *rotate* is false, the rightmost bits will be filled with zeroes. If true the rightmost bits will be the bits shifted
 out of the left.
 
-void lsr(uint8_t, bool);
+void lsr(uint8_t shift, bool rotate);
 -------------
 Logically shifts the output bits right. Shift should be 0-7, but bigger values will simply clear the output to zero (if
 *rotate* is zero.
